@@ -62,7 +62,7 @@ print(CREATOR_COLOR + "Developed by Simon\n\n" + RESET_COLOR)
 folders = [
     os.path.join(os.environ["SYSTEMDRIVE"], "Windows", "Temp"),
     os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp"),
-    os.path.join("C:\\", "Program Files", "BIN")
+    os.path.join("C:\\", "$Recycle.Bin")
 ]
 
 total_freed = 0
