@@ -4,7 +4,8 @@
 
 Simple Python File to Clean up  Temp Files 
 
-![image](https://user-images.githubusercontent.com/96681438/235194777-ddab243c-ef4a-4370-92fb-9cb1054aecd7.png)
+![235194777-ddab243c-ef4a-4370-92fb-9cb1054aecd7 (2)](https://user-images.githubusercontent.com/96681438/235288313-a50c4d38-94b9-46a1-b241-b47b9503d52e.png)
+
 
 # 📚 Usage 📚
 
