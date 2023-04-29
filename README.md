@@ -9,7 +9,7 @@ Simple Python File to Clean up  Temp Files
 
 # 📚 Usage 📚
 
-Download the ZIP file from [the latest release](https://github.com/LowOnGravity/TempCleaner/releases/tag/V1)
+Download the ZIP file from [the latest release](https://github.com/LowOnGravity/TempCleaner/releases/tag/V2)
 
 Unpack it and run ``setup.bat`` to install all required modules.
 
