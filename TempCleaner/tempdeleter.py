@@ -61,7 +61,8 @@ print(CREATOR_COLOR + "Developed by Simon\n\n" + RESET_COLOR)
 
 folders = [
     os.path.join(os.environ["SYSTEMDRIVE"], "Windows", "Temp"),
-    os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp")
+    os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp"),
+    os.path.join("C:\\", "Program Files", "BIN")
 ]
 
 total_freed = 0
@@ -89,4 +90,4 @@ for folder in folders:
 
 print("\n" + SUCCESS_COLOR + f"[ {CONSOLE_COLOR}CONSOLE{SUCCESS_COLOR} ] Total space freed: {FREED_COLOR}{total_freed / 1024 / 1024:.2f} MB" + RESET_COLOR)
 
-input("Press Enter to exit...")  # Add this line to prevent console window from closing immediately
+input("User Input required to quit the script.")  # Add this line to prevent console window from closing immediately
