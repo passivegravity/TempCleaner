@@ -4,9 +4,16 @@
 
 Simple Python File to Clean up  Temp Files 
 
-![235194777-ddab243c-ef4a-4370-92fb-9cb1054aecd7 (2)](https://user-images.githubusercontent.com/96681438/235288313-a50c4d38-94b9-46a1-b241-b47b9503d52e.png)
+![Bez tytułu (1)](https://user-images.githubusercontent.com/96681438/236390958-0f9d2bce-3fa0-41f1-96d3-5a5bfc7f0dd3.png)
 
 
+  
+  # Newest Updates 
+  
+  Added path to ``%USER%/Videos`` to delete all accidental NVIDIA clips and other forgotten files with big weight.
+  
+  Made the script loop, it will re-delete all content in provided subfolders every 20 minutes as long as you keep it running.
+  
 # 📚 Usage 📚
 
 Download the ZIP file from [the latest release](https://github.com/LowOnGravity/TempCleaner/releases/tag/V2)
