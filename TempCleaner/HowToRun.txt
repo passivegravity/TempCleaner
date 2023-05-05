@@ -1,3 +1,0 @@
-- start "setup.bat" to install required modules
-- open CMD and navigate to this folder
-- to launch this executable, use command "py tempdeleter.py"
