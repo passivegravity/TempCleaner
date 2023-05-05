@@ -5,12 +5,13 @@
 # License v3.0. A copy of this license is available at
 # https://www.gnu.org/licenses/agpl-3.0.en.html
 
-
 import os
 import shutil
 from colorama import Fore, Style
 import art
 import termcolor
+import time
+
 
 # Define colors
 HEADER_COLOR = Fore.LIGHTMAGENTA_EX
@@ -22,6 +23,7 @@ ERROR_COLOR = Fore.RED
 RESET_COLOR = Style.RESET_ALL
 CREATOR_COLOR = Fore.MAGENTA + Style.BRIGHT
 CONSOLE_COLOR = Fore.CYAN
+
 
 # Custom purple gradient color definition
 def purple(text):
@@ -57,37 +59,39 @@ print(CONSOLE_COLOR + header)
 # Print creator info
 print(CREATOR_COLOR + "Developed by Simon\n\n" + RESET_COLOR)
 
- # Changing this does not make you a developer of any sort.
-
+# Changing this does not make you a developer of any sort.
 folders = [
     os.path.join(os.environ["SYSTEMDRIVE"], "Windows", "Temp"),
     os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp"),
+      os.path.join(os.environ["USERPROFILE"], "Videos"),
     os.path.join("C:\\", "$Recycle.Bin")
 ]
 
-total_freed = 0
-
-for folder in folders:
-    print(CLEANING_COLOR + f"[ {CONSOLE_COLOR}CONSOLE{CLEANING_COLOR} ] Cleaning up " +  folder + RESET_COLOR)
-    try:
-        freed = 0
-        for root, dirs, files in os.walk(folder):
-            for file in files:
-                try:
-                    path = os.path.join(root, file)
-                    size = os.path.getsize(path)
-                    os.remove(path)
-                    freed += size
-                except Exception as e:
-                    pass
-        if isinstance(freed, int):
-            total_freed += freed
-            print(SUCCESS_COLOR + f"[ {CONSOLE_COLOR}CONSOLE{SUCCESS_COLOR} ] Cleaned up {FREED_COLOR}{freed / 1024 / 1024:.2f} MB" + SUCCESS_COLOR + f" in {folder}" + RESET_COLOR)
-        else:
+def clean_temp_folders():
+    total_freed = 0
+    for folder in folders:
+        print(CLEANING_COLOR + f"[ {CONSOLE_COLOR}CONSOLE{CLEANING_COLOR} ] Cleaning up " +  folder + RESET_COLOR)
+        try:
+            freed = 0
+            for root, dirs, files in os.walk(folder):
+                for file in files:
+                    try:
+                        path = os.path.join(root, file)
+                        size = os.path.getsize(path)
+                        os.remove(path)
+                        freed += size
+                    except Exception as e:
+                        pass
+            if isinstance(freed, int):
+                total_freed += freed
+                print(SUCCESS_COLOR + f"[ {CONSOLE_COLOR}CONSOLE{SUCCESS_COLOR} ] Cleaned up {FREED_COLOR}{freed / 1024 / 1024:.2f} MB" + SUCCESS_COLOR + f" in {folder}" + RESET_COLOR)
+            else:
+                pass
+        except Exception as e:
             pass
-    except Exception as e:
-        pass
+    return total_freed
 
-print("\n" + SUCCESS_COLOR + f"[ {CONSOLE_COLOR}CONSOLE{SUCCESS_COLOR} ] Total space freed: {FREED_COLOR}{total_freed / 1024 / 1024:.2f} MB" + RESET_COLOR)
-
-input("User Input required to quit the script.")  # Add this line to prevent console window from closing immediately
+while True:
+    total_freed = clean_temp_folders()
+    print(FREED_COLOR + f"\n[ {CONSOLE_COLOR}CONSOLE{FREED_COLOR} ] Total space freed: {total_freed / 1024 / 1024:.2f} MB" + RESET_COLOR)
+    time.sleep(1200)  # Wait for 20 minutes
